@@ -8,12 +8,27 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-resident" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+	<br><br>
+		
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
+		</div>
+		
+		<div class="span8">
+	
+		<div align="right">	
+		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
+
+		
+		<li>
+		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/Resident/create">
+		<i class="icon-info-sign"></i> Add Resident</a>
+		</li>
+	
+
+	
+
 		</div>
 		<div id="list-resident" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -22,6 +37,7 @@
 			</g:if>
 			<table>
 				<thead>
+				<table class="table table-bordered">
 					<tr>
 					
 						<g:sortableColumn property="residentNumber" title="${message(code: 'resident.residentNumber.label', default: 'Resident Number')}" />
@@ -38,6 +54,7 @@
 					
 					</tr>
 				</thead>
+				
 				<tbody>
 				<g:each in="${residentInstanceList}" status="i" var="residentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">

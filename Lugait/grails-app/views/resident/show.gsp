@@ -8,16 +8,37 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-resident" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
+		</div>
+		
+		<div class="span8">
+		
+		<div align="center">	
+		<ul class="nav nav-pills" style="border: solid 0px #0000FF;">
+		
+		<li class="active"><a href="http://localhost:8080/gradAdvising/resident/list">Resident List</a></li>
+		
+		<g:if test="${flash.message}">
+			<div class="alert alert-info">
+			<div class="message" role="status">${flash.message}</div>
+			</div>
+			</g:if>
+   
+		
+			<div class="container-fluid">
+		
+			<div class="span12">
+			<div class="hero-unit">
+	
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
+		
 		</div>
 		<div id="show-resident" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="Personal Information" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -171,8 +192,8 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${residentInstance?.id}" />
-					<g:link class="edit" action="edit" id="${residentInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn" action="edit" id="${residentInstance?.id}"><g:message code="button.edit.label" default="Edit" /></g:link>
+					<g:actionSubmit class="btn btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 		</div>
