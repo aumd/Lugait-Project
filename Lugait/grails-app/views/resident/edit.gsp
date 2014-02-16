@@ -6,17 +6,39 @@
 		<g:set var="entityName" value="${message(code: 'resident.label', default: 'Resident')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
+	
 	<body>
-		<a href="#edit-resident" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+	<<br><br>
+		
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
 		</div>
+		
+		<div class="span8">
+	
+		<div align="right">	
+		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
+		
+		<!--FOR SEARCH-->
+		
+		<li>
+		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/list">
+		<i class="icon-info-sign"></i> Resident Listing</a>
+		</li>
+		
+		<fieldset class="buttons">
+					<g:form action="searchResident" controller="student" class="">
+					<g:textField name="idNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
+					<g:submitButton name="search" class="buttons" value="Search" />
+					</g:form>
+			</fieldset>
+		
+		<!-- SEARCH ENDS HERE--->
+		
 		<div id="edit-resident" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+			<h3><center>Update Resident Information</center></h3>
+		
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

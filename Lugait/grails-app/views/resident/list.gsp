@@ -19,19 +19,27 @@
 	
 		<div align="right">	
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
-
+		
+		<!--FOR SEARCH-->
 		
 		<li>
-		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/Resident/create">
+		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/create">
 		<i class="icon-info-sign"></i> Add Resident</a>
 		</li>
-	
-
-	
+		
+		<fieldset class="buttons">
+					<g:form action="searchResident" controller="student" class="">
+					<g:textField name="idNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
+					<g:submitButton name="search" class="buttons" value="Search" />
+					</g:form>
+			</fieldset>
+		
+		<!-- SEARCH ENDS HERE--->
 
 		</div>
 		<div id="list-resident" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<center><h1><g:message code="default.list.label" args="[entityName]" /></h1></center>
+			
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

@@ -7,30 +7,41 @@
 		<g:set var="entityName" value="${message(code: 'resident.label', default: 'Resident')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
+	
 	<body>
+	<br><br>
+		
 		<div class="container-fluid">
 		<div class="row-fluid">
 		<div class="span2">
 		</div>
 		
 		<div class="span8">
+	
+		<div align="right">	
+		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
 		
-		<div align="center">	
-		<ul class="nav nav-pills" style="border: solid 0px #0000FF;">
+		<!--FOR SEARCH-->
 		
-		<li class="active"><a href="http://localhost:8080/gradAdvising/resident/list">Resident List</a></li>
+		<li>
+		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/list">
+		<i class="icon-info-sign"></i> Resident Listing</a>
+		</li>
+		
+		<fieldset class="buttons">
+					<g:form action="searchResident" controller="student" class="">
+					<g:textField name="idNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
+					<g:submitButton name="search" class="buttons" value="Search" />
+					</g:form>
+			</fieldset>
+		
+		<!-- SEARCH ENDS HERE--->
 		
 		<g:if test="${flash.message}">
 			<div class="alert alert-info">
 			<div class="message" role="status">${flash.message}</div>
 			</div>
 			</g:if>
-   
-		
-			<div class="container-fluid">
-		
-			<div class="span12">
-			<div class="hero-unit">
 	
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -38,11 +49,11 @@
 		
 		</div>
 		<div id="show-resident" class="content scaffold-show" role="main">
-			<h1><g:message code="Personal Information" args="[entityName]" /></h1>
+			<h3><center><g:message code="Personal Information" args="[entityName]" /></center></h3>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list resident">
+			
 			
 				<g:if test="${residentInstance?.residentNumber}">
 				<li class="fieldcontain">
