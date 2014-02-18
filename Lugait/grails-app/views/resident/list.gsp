@@ -28,8 +28,8 @@
 		</li>
 		
 		<fieldset class="buttons">
-					<g:form action="searchResident" controller="student" class="">
-					<g:textField name="idNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
+					<g:form action="searchResident" controller="resident" class="">
+					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
 					<g:submitButton name="search" class="buttons" value="Search" />
 					</g:form>
 			</fieldset>

@@ -46,4 +46,10 @@ class Resident {
 		disabilities(blank:false)
 		medHistory(blank:false)
     }
+	
+	static searchable = true
+	
+	String toString(){
+	"${this.residentNumber} ${residentName}"
+	}
 }

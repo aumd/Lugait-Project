@@ -99,4 +99,23 @@ class ResidentController {
             redirect(action: "show", id: id)
         }
     }
+	
+	def searchableService
+	def searchResident(){
+		def residentNumber = params.residentNumber
+		
+		if(residentNumber){
+			def srchResults = searchableService.search(residentNumber)
+			def results = srchResults.results
+			if(results)
+			render(view: "list", model: [residentInstanceList: results, residentInstanceTotal: results.size()])	
+			else{
+				flash.message = message(code: 'Resident not found')
+				redirect(action:"list")
+			}
+		}else{
+				flash.message = message(code: '')
+				redirect(action:"list")
+			}
+	}
 }
