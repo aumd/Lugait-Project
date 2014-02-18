@@ -8,7 +8,6 @@
 	</head>
 	
 	<body>
-	<<br><br>
 		
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -19,22 +18,6 @@
 	
 		<div align="right">	
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
-		
-		<!--FOR SEARCH-->
-		
-		<li>
-		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/list">
-		<i class="icon-info-sign"></i> Resident Listing</a>
-		</li>
-		
-		<fieldset class="buttons">
-					<g:form action="searchResident" controller="resident" class="">
-					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
-					<g:submitButton name="search" class="buttons" value="Search" />
-					</g:form>
-			</fieldset>
-		
-		<!-- SEARCH ENDS HERE--->
 		
 		<div id="edit-resident" class="content scaffold-edit" role="main">
 			<h3><center>Update Resident Information</center></h3>
@@ -56,8 +39,10 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
+				<center>
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+				</center>
 				</fieldset>
 			</g:form>
 		</div>
