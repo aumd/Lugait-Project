@@ -30,7 +30,7 @@ class Resident {
 		residentName(blank:false, unique:true)
 		birthDate(blank:false)
 		address(blank:false)
-		religion(blank:false, inList: ["Roman Catholic", "SDA", "Iglesia ni Cristo", "Jehovah's Witness"])
+		religion(blank:false, inList: ["Roman Catholic", "SDA", "Protestant", "Baptist", "Iglesia ni Cristo", "Jehovah's Witness", ""])
 		
 		status(blank:false, inList: ["Single", "Married", "Widowed", "Lived-in"])
 		spouse(unique:true)
