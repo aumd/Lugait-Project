@@ -103,7 +103,7 @@ class ResidentController {
 	def searchableService
 	def searchResident(){
 		def residentNumber = params.residentNumber
-		
+
 		if(residentNumber){
 			def srchResults = searchableService.search(residentNumber)
 			def results = srchResults.results
@@ -118,4 +118,5 @@ class ResidentController {
 				redirect(action:"list")
 			}
 	}
+
 }

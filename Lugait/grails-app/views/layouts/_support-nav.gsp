@@ -16,11 +16,8 @@
   
   <!-- bottom navigation-->
 
-  <center>
-  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-	&copy; 2014
-  </nav>
-  </center>
+  
+  
   
 
   

@@ -1,48 +1,41 @@
-<%@ page import="lugait.Resident" %>
+<%@ page import="lugait.Child" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'resident.label', default: 'Resident')}" />
+		<g:set var="entityName" value="${message(code: 'child.label', default: 'Child')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
-
 	<body>
-
-		<div class="container-fluid">
-		<div class="row-fluid">
-		<div class="span2">
+		<a href="#edit-child" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
 		</div>
-
-		<div class="span8">
-
-		<div align="right">	
-		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
-
-		<div id="edit-resident" class="content scaffold-edit" role="main">
-			<h3><center>Update Resident Information</center></h3>
-
+		<div id="edit-child" class="content scaffold-edit" role="main">
+			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<g:hasErrors bean="${residentInstance}">
+			<g:hasErrors bean="${childInstance}">
 			<ul class="errors" role="alert">
-				<g:eachError bean="${residentInstance}" var="error">
+				<g:eachError bean="${childInstance}" var="error">
 				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
 			<g:form method="post" >
-				<g:hiddenField name="id" value="${residentInstance?.id}" />
-				<g:hiddenField name="version" value="${residentInstance?.version}" />
+				<g:hiddenField name="id" value="${childInstance?.id}" />
+				<g:hiddenField name="version" value="${childInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-
 				</fieldset>
 			</g:form>
 		</div>
