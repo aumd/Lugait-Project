@@ -3,20 +3,28 @@
 <div class="container">  
 <div class="row">  
 
-	<div class="span4">
+	<div class="span12">
 	<!-- Basic Information -->
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentNumber', 'error')} required">
 	<label for="residentNumber">
-		<g:message code="resident.residentNumber.label" default="Resident Number" />
+		<h4>Resident Number</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:textField name="residentNumber" required="" value="${residentInstance?.residentNumber}"/>
 	</div>
 	
+	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'precinctNumber', 'error')} required">
+	<label for="precinctNumber">
+		<h4>Precinct Number</h4>
+		<span class="required-indicator"></span>
+	</label>
+	<g:textField name="precinctNumber" required="" value="${residentInstance?.precinctNumber}"/>
+	</div>
+	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'householdRole', 'error')} required">
 	<label for="householdRole">
-		<g:message code="resident.householdRole.label" default="Household Role" />
+		<h4>Household Role</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:select name="householdRole" from="${residentInstance.constraints.householdRole.inList}" required="" value="${residentInstance?.householdRole}" valueMessagePrefix="resident.householdRole"/>
@@ -24,13 +32,15 @@
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentFirstName', 'error')} required">
 	<label for="residentFirstName">
-		<g:message code="resident.residentFirstName.label" default="First Name" />
+		<h4>Resident Name</h4>
 		<span class="required-indicator"></span>
-	</label>
-	<g:textField name="residentFirstName" required="" value="${residentInstance?.residentFirstName}"/>
+	</label> 
+	<g:textField name="residentFirstName" required="" placeholder="First Name" value="${residentInstance?.residentFirstName}"/>
+	<g:textField name="residentMiddleName" required="" placeholder="Middle Name" value="${residentInstance?.residentMiddleName}"/>
+	<g:textField name="residentLastName" required="" placeholder="Last Name" value="${residentInstance?.residentLastName}"/>
 	</div>
 
-	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentMiddleName', 'error')} required">
+	<!-- <div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentMiddleName', 'error')} required">
 	<label for="residentMiddleName">
 		<g:message code="resident.residentMiddleName.label" default="Middle Name" />
 		<span class="required-indicator"></span>
@@ -44,23 +54,11 @@
 		<span class="required-indicator"></span>
 	</label>
 	<g:textField name="residentLastName" required="" value="${residentInstance?.residentLastName}"/>
-	</div>
-	
-	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'precinctNumber', 'error')} required">
-	<label for="precinctNumber">
-		<g:message code="resident.precinctNumber.label" default="Precinct Number" />
-		<span class="required-indicator"></span>
-	</label>
-	<g:textField name="precinctNumber" required="" value="${residentInstance?.precinctNumber}"/>
-	</div>
-	</div>
-	
-	<!-- second column information-->
-	<div class="span4">
+	</div> -->
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'birthDate', 'error')} required">
 	<label for="birthDate">
-		<g:message code="resident.birthDate.label" default="Birth Date" />
+		<h4>Birthdate</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:datePicker name="birthDate" precision="day"  value="${residentInstance?.birthDate}"  />
@@ -68,7 +66,7 @@
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'address', 'error')} required">
 	<label for="address">
-		<g:message code="resident.address.label" default="Address" />
+		<h4>Address</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:textField name="address" required="" value="${residentInstance?.address}"/>
@@ -76,7 +74,7 @@
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'religion', 'error')} required">
 	<label for="religion">
-		<g:message code="resident.religion.label" default="Religion" />
+		<h4>Religion</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:select name="religion" from="${residentInstance.constraints.religion.inList}" required="" value="${residentInstance?.religion}" valueMessagePrefix="resident.religion"/>
@@ -84,50 +82,57 @@
 
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'status', 'error')} required">
 	<label for="status">
-		<g:message code="resident.status.label" default="Status" />
+		<h4>Status</h4>
 		<span class="required-indicator"></span>
 	</label>
 	<g:select name="status" from="${residentInstance.constraints.status.inList}" required="" value="${residentInstance?.status}" valueMessagePrefix="resident.status"/>
 	</div>
 	</div>
-	
-	<div class="span4">
-	<h3> </h3>
+</div>
+</div>
+
+<div class="container">  
+<div class="row">  
+
+	<div class="span12">
+	<h3> Direct Family Members </h3>
 	<!-- family members-->
 	
+	<h4>Spouse</h4>
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentSpouseFirstName', 'error')} required">
-	<label for="residentSpouseFirstName">
-		<g:message code="resident.residentSpouseFirstName.label" default="Spouse First Name" />
-		
-	</label>
-	<g:textField name="residentSpouseFirstName" required="" value="${residentInstance?.residentSpouseFirstName}"/>
+	<!-- <label for="residentSpouseFirstName">
+		<g:message code="resident.residentSpouseFirstName.label" default="First Name" />
+	</label> -->
+	<g:textField name="residentSpouseFirstName" required="" placeholder="First Name" value="${residentInstance?.residentSpouseFirstName}"/> 
+	<g:textField name="residentSpouseMiddleName" required="" placeholder="Middle Name" value="${residentInstance?.residentSpouseMiddleName}"/>
+	<g:textField name="residentSpouseLastName" required="" placeholder="Last Name" value="${residentInstance?.residentSpouseLastName}"/>
+	
 	</div>
 
-	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentSpouseMiddleName', 'error')} required">
+	<!-- <div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentSpouseMiddleName', 'error')} required">
 	<label for="residentSpouseMiddleName">
-		<g:message code="resident.residentSpouseMiddleName.label" default="Spouse Middle Name" />
+		<g:message code="resident.residentSpouseMiddleName.label" default="Middle Name" />
 		
 	</label>
-	<g:textField name="residentSpouseMiddleName" required="" value="${residentInstance?.residentSpouseMiddleName}"/>
+	<g:textField name="residentSpouseMiddleName" required="" value="${residentInstance?.residentSpouseMiddleName}"/> 
 	</div>
 
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentSpouseLastName', 'error')} required">
 	<label for="residentSpouseLastName">
-		<g:message code="resident.residentSpouseLastName.label" default="Spouse Last Name" />
+		<g:message code="resident.residentSpouseLastName.label" default="Last Name" />
 		
 	</label>
-	<g:textField name="residentSpouseLastName" required="" value="${residentInstance?.residentSpouseLastName}"/>
-	</div>
-
+	<g:textField name="residentSpouseLastName" required="" value="${residentInstance?.residentSpouseLastName}"/> 
+	</div> -->
 	
+	<h4>Children</h4>
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'child', 'error')} ">
-	<label for="child">
+	<!-- <label for="child">
 		<g:message code="resident.child.label" default="Child" />
-		
-	</label>
+	</label> -->
 	<g:textField name="child" value="${residentInstance?.child}"/>
 	</div>
-
+	</div>
 	
 </div>
 </div>
@@ -137,7 +142,7 @@
 <div class="row">
 	
 	<!-- next row information -->
-	<center><h3> Additional Information <h3></center>
+	<h3> Additional Information <h3>
 	<div class="span4">
 
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'educationalAttainment', 'error')} required">

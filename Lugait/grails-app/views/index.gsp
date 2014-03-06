@@ -9,14 +9,14 @@
 	<body>
 		<!-- added this bit 09/01 -->
 	
-	
 	<div class="jumbotron">
 	<div class="container">
 		<div class="row">
-		<div class="span12">
+		<div class="span8">
 		<div class="hero-content">
-	  <h3>Poblacion Community</h3>
-        <h1>Situational Analysis</h1>
+	  <h3>Barangay Poblacion</h3>
+	    <h3>Lugait, Misamis Oriental</h3>
+        <h1>Stakeholder Profile</h1>
         
         	<br></br>
 		
@@ -29,14 +29,40 @@
 		<a class="btn btn-large btn-github" href="http://localhost:8080/Lugait"
 			<i class=""></i>
             Reports <br> <br> </a>
-	
-	
-		<!-- </div>
+			
+			</div>
 		   <div class="shameless-self-promotion">
-          &copy; C C D V
+          &copy; 2014
         </div>
-		</div> -->
+      </div>
+    </div>   
+	
+	
+	<div class="span4">
+      <div id="iconCarousel" class="carousel slide">
+        <!-- Carousel items -->
 		
+        <div class="carousel-inner">
+          <div class="active item"><div><img src="images/a.jpg" alt="" /></div></div>
+		  <div class="item"><div><img src="images/b.jpg" alt="" /></div></div>
+          <div class="item"><div><img src="images/c.jpg" alt="" /></div></div>
+		  <div class="item"><div><img src="images/d.jpg" alt="" /></div></div>
+          <div class="item"><div><img src="images/e.jpg" alt="" /></div></div>
+        </div>
+		
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#iconCarousel" data-slide="prev"
+           onClick="_gaq.push(['_trackEvent', 'iconCarousel', 'Prev']);">
+          <i class="icon-arrow-left"></i></a>
+        <a class="carousel-control right" href="#iconCarousel" data-slide="next"
+           onClick="_gaq.push(['_trackEvent', 'iconCarousel', 'Next']);">
+          <i class="icon-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
 
 <!-- js for carousel -->
 

@@ -15,12 +15,13 @@
 		<div class="span2">
 		</div>
 
+
 		<div class="span8">
 
-		<div align="right">
+		<div align="left">
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
 
-			<h3><center>Resident Information Sheet</center></h3>
+			<h3>Resident Information Sheet</h3>
 
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
