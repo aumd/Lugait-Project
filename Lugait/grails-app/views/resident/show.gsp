@@ -262,6 +262,8 @@
 					
 				</li>
 				</g:if>
+				
+			<g:link class="btn" controller="report" action="showReport" id="${residentInstance?.id}">Resident Reports</g:link></br>
 			
 			</ol>
 			<g:form>
