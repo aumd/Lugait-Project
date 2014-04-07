@@ -12,11 +12,33 @@
 		<defaultValueExpression><![CDATA["<parameter error>"]]></defaultValueExpression>
 	</parameter>
 	<queryString><![CDATA[select * from resident where resident.id = $P{residentId}]]></queryString>
+	<field name="address" class="java.lang.String"/>
+	<!-- <field name="birth_date" class="java.lang.String"/> -->
+	<field name="child" class="java.lang.String"/>
+	<field name="disabilities" class="java.lang.String"/>
+	<field name="educational_attainment" class="java.lang.String"/>
+	<field name="employment_status" class="java.lang.String"/>
+	<field name="environmental_sanitation" class="java.lang.String"/>
+	<field name="household_role" class="java.lang.String"/>
+	<field name="means_of_drinking_water" class="java.lang.String"/>
+	<field name="means_of_living" class="java.lang.String"/>
+	<field name="med_history" class="java.lang.String"/>
+	<field name="monthly_income" class="java.lang.String"/>
+	<field name="precinct_number" class="java.lang.String"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="resident_first_name" class="java.lang.String"/>
+	<field name="resident_last_name" class="java.lang.String"/>
+	<field name="resident_middle_name" class="java.lang.String"/>
+	<field name="resident_number" class="java.lang.String"/>
+	<field name="resident_spouse_first_name" class="java.lang.String"/>
+	<field name="resident_spouse_last_name" class="java.lang.String"/>
+	<field name="resident_spouse_middle_name" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="139" splitType="Stretch">
+		<band height="139" isSplitAllowed="true">
 			<staticText>
 				<reportElement key="staticText-1" x="0" y="7" width="535" height="35"/>
 				<box>
@@ -30,7 +52,7 @@
 				</textElement>
 				<text><![CDATA[Resident Report]]></text>
 			</staticText>
-			<textField isBlankWhenNull="false">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 				<reportElement key="textField-1" x="0" y="50" width="535" height="82"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -39,10 +61,32 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement>
-					<font size="24"/>
+					<font size="14"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Hi, "+$P{residentId}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String">
+					<![CDATA[
+					"Resident Number: " + $F{resident_number} + " \n" +
+					"Resident Name: " + $F{resident_first_name} + " " + $F{resident_middle_name} + " " + $F{resident_last_name} + " \n" +
+					"Household Role: " + $F{household_role} + " \n" +
+					"Address: " + $F{address} + " \n" +
+					"Religion: " + $F{religion} + " \n" +
+					"Precinct Number: " + $F{precinct_number} + " \n" +
+					"Status: " + $F{status} + " \n" +
+					"Spouse Name: " + $F{resident_spouse_first_name} + " " + $F{resident_spouse_middle_name} + " " + $F{resident_spouse_last_name} + " \n" +
+					"Child: " + $F{child} + " \n" +
+					"Educational Attainment: " + $F{educational_attainment} + " \n" +
+					"Means Of Living: " + $F{means_of_living} + " \n" +
+					"Employment Status: " + $F{employment_status} + " \n" +
+					"Monthly Income: " + $F{monthly_income} + " \n" +
+					"Environmental Sanitation: " + $F{environmental_sanitation} + " \n" +
+					"Means Of Drinking Water: " + $F{means_of_drinking_water} + " \n" +
+					"Disabilities: " + $F{disabilities} + " \n" +
+					"Medical History: " + $F{med_history} + " \n"
+					]]>
+				</textFieldExpression>
+				
 			</textField>
+			
 		</band>
 	</title>
 	<pageHeader>
@@ -73,7 +117,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[Resident Report]]></text>
+				<!-- <text><![CDATA[Resident Report]]></text> -->
 			</staticText>
 		</band>
 	</summary>

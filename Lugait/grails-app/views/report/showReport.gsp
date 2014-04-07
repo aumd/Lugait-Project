@@ -34,17 +34,17 @@
 	
 	<table border="0" cellpadding="0">
 	<td>
-			<b>Resident Number:</b>		<g:fieldValue bean="${residentInstance}" field="residentNumber"/><br>
-			<b>Resident Name:</b>		<g:fieldValue bean="${residentInstance}" field="residentFirstName"/> <g:fieldValue bean="${residentInstance}" field="residentMiddleName"/> <g:fieldValue bean="${residentInstance}" field="residentLastName"/><br>
-			<b>Address:</b>					<g:fieldValue bean="${residentInstance}" field="address"/><br>
-			<b>Birthdate:</b>					<g:fieldValue bean="${residentInstance}" field="birthDate"/><br>
-			<b>Relationship Status:</b>					<g:fieldValue bean="${residentInstance}" field="status"/><br>
+			<b>Resident Number:</b>		${residentInstance?.residentNumber}<br>
+			<b>Resident Name:</b>		${residentInstance?.residentFirstName} ${residentInstance?.residentMiddleName} ${residentInstance?.residentLastName}<br>
+			<b>Address:</b>					${residentInstance?.address}<br>
+			<b>Birthdate:</b>					${residentInstance?.birthDate}<br>
+			<b>Relationship Status:</b>					${residentInstance?.status}<br>
 	</td>
 	<td>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b>Household Role:</b>					<g:fieldValue bean="${residentInstance}" field="householdRole"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Religion:</b>					<g:fieldValue bean="${residentInstance}" field="religion"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Educational Attainment</b>	<g:fieldValue bean="${residentInstance}" field="educationalAttainment"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Employment Status:</b>			<g:fieldValue bean="${residentInstance}" field="employmentStatus"/><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b>Household Role:</b>					${residentInstance?.householdRole}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Religion:</b>					${residentInstance?.religion}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Educational Attainment</b>	${residentInstance?.educationalAttainment}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Employment Status:</b>			${residentInstance?.employmentStatus}<br>
 	</td>
 	</table>
 	
