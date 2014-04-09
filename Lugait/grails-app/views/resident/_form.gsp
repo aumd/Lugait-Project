@@ -95,11 +95,11 @@
 	</div>
 	
 	
-	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentChildName', 'error')} ">
+	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentChildName', 'error')} required">
 	<g:message code="resident.residentChildName.label" default="Children:" />
 	<span class="required-indicator"></span>
 	<label>
-	<g:textField name="residentChildName" placeholder="Last name, First name M.I."value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName" required="" placeholder="Last name, First name M.I."value="${residentInstance?.residentChildName}"/>
 	</div>
 	
 	</div>	
