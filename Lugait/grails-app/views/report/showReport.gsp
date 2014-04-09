@@ -35,7 +35,7 @@
 	<table border="0" cellpadding="0">
 	<td>
 			<b>Resident Number:</b>		${residentInstance?.residentNumber}<br>
-			<b>Resident Name:</b>		${residentInstance?.residentFirstName} ${residentInstance?.residentMiddleName} ${residentInstance?.residentLastName}<br>
+			<b>Resident Name:</b>		${residentInstance?.residentName}
 			<b>Address:</b>					${residentInstance?.address}<br>
 			<b>Birthdate:</b>					<g:formatDate format="MM-dd-yyyy" date="${residentInstance?.birthDate}" /><br>
 			<b>Relationship Status:</b>					${residentInstance?.status}<br>
