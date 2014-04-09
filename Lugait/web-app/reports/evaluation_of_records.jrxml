@@ -13,7 +13,7 @@
 	</parameter>
 	<queryString><![CDATA[select * from resident where resident.id = $P{residentId}]]></queryString>
 	<field name="address" class="java.lang.String"/>
-	<!-- <field name="birth_date" class="java.lang.String"/> -->
+	<field name="birth_date" class="java.util.Date"/>
 	<field name="child" class="java.lang.String"/>
 	<field name="disabilities" class="java.lang.String"/>
 	<field name="educational_attainment" class="java.lang.String"/>
@@ -68,6 +68,7 @@
 					"Resident Number: " + $F{resident_number} + " \n" +
 					"Resident Name: " + $F{resident_first_name} + " " + $F{resident_middle_name} + " " + $F{resident_last_name} + " \n" +
 					"Household Role: " + $F{household_role} + " \n" +
+					"Birth Date: " + (new SimpleDateFormat("MM-dd-yyyy").format($F{birth_date})) + " \n" +
 					"Address: " + $F{address} + " \n" +
 					"Religion: " + $F{religion} + " \n" +
 					"Precinct Number: " + $F{precinct_number} + " \n" +
