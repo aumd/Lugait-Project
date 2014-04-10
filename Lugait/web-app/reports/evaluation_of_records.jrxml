@@ -34,6 +34,15 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
+		<band height="50" isSplitAllowed="true">
+		<image hyperlinkType="None">  
+			<reportElement x="0" y="0" width="170" height="50"/>  
+			<imageExpression class="java.io.File"><![CDATA[(new File("web-app/images/lugait.png"))]]>  
+			</imageExpression>  
+		</image>
+		</band>
+	</title>
+	<pageHeader>
 		<band height="139" isSplitAllowed="true">
 			<staticText>
 				<reportElement key="staticText-1" x="0" y="7" width="535" height="35"/>
@@ -85,9 +94,6 @@
 			</textField>
 			
 		</band>
-	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band splitType="Stretch"/>
