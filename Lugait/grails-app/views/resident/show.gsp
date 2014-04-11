@@ -12,10 +12,10 @@
 
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<div class="span2">
+		<div class="span1">
 		</div>
 
-		<div class="span8">
+		<div class="span10">
 
 		<div align="left">	
 		<ul class="nav nav-pills" style="border: solid 0px #0000FF;">
@@ -27,15 +27,17 @@
 		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/list">
 		<i class="icon-info-sign"></i> Resident Listing</a>
 		</li>
-
+		<div align="right"
 		<fieldset class="buttons">
 					<g:form action="searchResident" controller="resident" class="">
 					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
 					<g:submitButton name="search" class="buttons" value="Search" />
 					</g:form>
 			</fieldset>
-
+		</div>
 		<!-- SEARCH ENDS HERE--->
+		
+		<center><h1> Resident's Information</h1></center>
 
 		<div class="container-fluid">
 
@@ -44,7 +46,7 @@
 
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<div class="span2">
+		<div class="span3">
 		</div>
 
 		<g:if test="${flash.message}">
@@ -58,13 +60,34 @@
 		<div class="span2">
 
 		</div>
+		<!--
 		<div id="show-resident" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list resident">
-			
+		-->
+		
+		
+		<table border="0" cellpadding="0">
+	<td>
+			<b>Resident Number:</b>			<g:fieldValue bean="${residentInstance}" field="residentNumber"/><br>
+			<b>Precint Number:</b>			<g:fieldValue bean="${residentInstance}" field="precinctNumber"/><br>
+			<b>Resident Name:</b>		<g:fieldValue bean="${residentInstance}" field="residentName"/><br>
+			<b>Address:</b>		<g:fieldValue bean="${residentInstance}" field="address"/><br>
+			<b>Household Role:</b> 	<g:fieldValue bean="${residentInstance}" field="householdRole"/><br>
+	</td>
+	<td>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<b>Birthdate:</b>	<g:formatDate birthDate="${residentInstance?.birthDate}" format="MMM-dd-yyyy"/><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Religion:</b>			<g:fieldValue bean="${residentInstance}" field="religion"/><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Status:</b>		<g:fieldValue bean="${residentInstance}" field="status"/><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Spouse Name:</b>		<g:fieldValue bean="${residentInstance}" field="residentSpouseName"/><br>
+	</td>
+	</table>
+		
+		
+			<!--
 				<g:if test="${residentInstance?.residentName}">
 				<li class="fieldcontain">
 					<span id="residentName-label" class="property-label"><g:message code="resident.residentName.label" default="Resident Name" /></span>
@@ -144,8 +167,8 @@
 						<span class="property-value" aria-labelledby="residentSpouseName-label"><g:fieldValue bean="${residentInstance}" field="residentSpouseName"/></span>
 					
 				</li>
-				</g:if>
-			
+				</g:if> -->
+				
 				<g:if test="${residentInstance?.residentChildName}">
 				<li class="fieldcontain">
 					<span id="residentChildName-label" class="property-label"><g:message code="resident.residentChildName.label" default="Resident Child/s Name" /></span>
