@@ -9,6 +9,7 @@ class Resident {
 	String address
 	String religion
 	String precinctNumber
+	String age
 	
 	String status
 	String residentSpouseName
@@ -36,8 +37,9 @@ class Resident {
 		address(blank:false)
 		religion(blank:false, inList: ["Roman Catholic", "SDA", "Protestant", "Baptist", "Iglesia ni Cristo", "Jehovah's Witness", "Others"])
 		precinctNumber(blank:false)
+		age(blank:false)
 		
-		status(blank:false, inList: ["Single", "Married", "Widowed", "Lived-in", "Dependet", "Others"])
+		status(blank:false, inList: ["Single", "Married", "Widowed", "Lived-in", "Dependent", "Others"])
 		residentSpouseName()
 		residentChildName()
 		

@@ -52,6 +52,8 @@
 						<g:sortableColumn property="householdRole" title="${message(code: 'resident.householdRole.label', default: 'Household Role')}" />
 
 						<g:sortableColumn property="residentLastName" title="${message(code: 'resident.residentLastName.label', default: 'Resident Name')}" />
+						
+						<g:sortableColumn property="age" title="${message(code: 'resident.age.label', default: 'Age')}" />
 
 						<g:sortableColumn property="birthDate" title="${message(code: 'resident.birthDate.label', default: 'Birth Date')}" />
 
@@ -71,6 +73,8 @@
 						<td>${fieldValue(bean: residentInstance, field: "householdRole")}</td>
 
 						<td>${fieldValue(bean: residentInstance, field: "residentName")}</td>
+						
+						<td>${fieldValue(bean: residentInstance, field: "age")}</td>
 
 						<td><g:formatDate format="MM-dd-yyyy" date="${residentInstance.birthDate}" /></td>
 

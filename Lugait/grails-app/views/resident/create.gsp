@@ -18,7 +18,7 @@
 
 		<div class="span8">
 
-		<div align="left">
+		<div align=right">
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
 
 			<h3>Resident Information Sheet</h3>

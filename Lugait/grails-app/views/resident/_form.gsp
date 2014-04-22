@@ -31,6 +31,14 @@
 	<g:textField name="residentName" required="" placeholder="Last name, First name M.I." value="${residentInstance?.residentName}"/>
 	</div>
 	
+	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'age', 'error')} required">
+	<label for="age">
+	<g:message code="resident.age.label" default="Age:" />
+		<span class="required-indicator"></span>
+	</label> 
+	<g:textField name="age" required="" placeholder="" value="${residentInstance?.age}"/>
+	</div>
+	
 	
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'address', 'error')} required">
 	<label for="address">
@@ -41,6 +49,7 @@
 	</div>
 	
 	</div>
+	
 	
 	<div class="span5">
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'householdRole', 'error')} required">

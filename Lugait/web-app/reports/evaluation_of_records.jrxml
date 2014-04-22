@@ -13,6 +13,7 @@
 	</parameter>
 	<queryString><![CDATA[select * from resident where resident.id = $P{residentId}]]></queryString>
 	<field name="address" class="java.lang.String"/>
+	<field name="age" class="java.lang.String"/>
 	<field name="birth_date" class="java.util.Date"/>
 	<field name="resident_child_name" class="java.lang.String"/>
 	<field name="disabilities" class="java.lang.String"/>
@@ -43,10 +44,11 @@
 		</image>
 		</band>
 	</title>
+	
 	<pageHeader>
-		<band height="139" isSplitAllowed="true">
+		<band height="200" isSplitAllowed="true">
 			<staticText>
-				<reportElement key="staticText-1" x="0" y="7" width="535" height="35"/>
+				<reportElement key="staticText-1" x="0" y="0" width="535" height="35"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -54,12 +56,40 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font fontName="Times New Roman" size="20"/>
+					<font fontName="Times New Roman" size="22"/>
 				</textElement>
-				<text><![CDATA[Resident Report]]></text>
+				<text><![CDATA[Municipality of Lugait]]></text>
 			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="3" y="29" width="535" height="50"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Lugait, Misamis Occidental]]></text>
+			</staticText>
+			
+			<staticText>
+				<reportElement key="staticText-1" x="0" y="43" width="535" height="35"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[Resident Information Sheet]]></text>
+			</staticText>
+			
 			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
-				<reportElement key="textField-1" x="0" y="50" width="535" height="82"/>
+				<reportElement key="textField-1" x="0" y="85" width="535" height="82"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -73,6 +103,7 @@
 					<![CDATA[
 					"Resident Number: " + $F{resident_number} + " \n" +
 					"Resident Name: " + $F{resident_name} + " \n" +
+					"Age: " + $F{age} + " \n" +
 					"Household Role: " + $F{household_role} + " \n" +
 					"Birth Date: " + (new SimpleDateFormat("MM-dd-yyyy").format($F{birth_date})) + " \n" +
 					"Address: " + $F{address} + " \n" +
