@@ -22,7 +22,7 @@
 		
         <div class="actions">
 		
-		<a class="btn btn-large btn-github" href="http://localhost:8080/Lugait/Resident/create"
+		<a class="btn btn-large" href="http://localhost:8080/Lugait/Resident/create"
 			<i class=""></i>
            Add <br>Resident</a>
 			

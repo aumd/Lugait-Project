@@ -2,6 +2,7 @@ package lugait
 
 class Resident {
 
+	String purok
 	String residentNumber
 	String householdRole
 	String residentName
@@ -30,6 +31,7 @@ class Resident {
 	
     static constraints = {
 		
+		purok(blank:false, inList: ["Purok Andres Bonifacio", "Purok Mabini", "Purok Macao", "Purok Masilakon 1", "Purok Masilakon 2", "Purok Mauswagon", "Purok Rizal", "Purok Salimbal"])
 		residentName(blank:false)
 		residentNumber(blank:false, unique:true)
 		householdRole(blank:false, inList: ["Family Head", "Family Member", "Others"])

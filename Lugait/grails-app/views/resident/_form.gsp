@@ -7,6 +7,16 @@
 	<!-- Basic Information -->
 	
 	<div class="span6">
+
+	
+	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'purok', 'error')} required">
+	<label for="purok">
+		<g:message code="resident.purok.label" default="Resident's Purok:" />
+		<span class="required-indicator"></span>
+	</label>
+	<g:select name="purok" from="${residentInstance.constraints.purok.inList}" required="" value="${residentInstance?.purok}" valueMessagePrefix="resident.purok"/>
+	</div>
+			
 	<div class="fieldcontain ${hasErrors(bean: residentInstance, field: 'residentNumber', 'error')} required">
 	<label for="residentNumber">
 	<g:message code="resident.residentNumber.label" default="Resident Number:" />
@@ -108,8 +118,15 @@
 	<g:message code="resident.residentChildName.label" default="Children:" />
 	<span class="required-indicator"></span>
 	<label>
-	<g:textField name="residentChildName" required="" placeholder="Last name, First name M.I."value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName"  value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName" 	value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName" 	value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName" 	value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName"  value="${residentInstance?.residentChildName}"/>
+	<g:textField name="residentChildName"  value="${residentInstance?.residentChildName}"/>
+	
 	</div>
+	
 	
 	</div>	
 	</div>

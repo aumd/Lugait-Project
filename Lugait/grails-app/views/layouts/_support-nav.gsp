@@ -4,7 +4,7 @@
 	  
 	  <a class="brand" href="http://localhost:8080/Lugait"> Poblacion </a>
 		
-		<ul class="nav">
+		<ul class="nav"> 
 		  <li><a href="http://localhost:8080/Lugait/Resident">Residents</a></li>
           <li><a href="http://localhost:8080/Lugait/">Reports</a></li>
 		  <li><a href="http://localhost:8080/Lugait/">About &raquo</a></li>

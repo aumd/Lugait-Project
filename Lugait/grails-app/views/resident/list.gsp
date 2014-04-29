@@ -11,10 +11,10 @@
 
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<div class="span2">
+		<div class="span1">
 		</div>
 
-		<div class="span8">
+		<div class="span10">
 
 		<div align="right">	
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
@@ -26,10 +26,10 @@
 		<i class="icon-info-sign"></i> Add Resident</a>
 		</li>
 
-		<fieldset class="buttons">
+		<fieldset class="">
 					<g:form action="searchResident" controller="resident" class="">
 					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
-					<g:submitButton name="search" class="buttons" value="Search" />
+					<g:submitButton name="search" button class="btn btn-default" value="Search" />
 					</g:form>
 			</fieldset>
 
@@ -47,11 +47,14 @@
 				<table class="table table-bordered">
 					<tr>
 
+					<g:sortableColumn property="purok" title="${message(code: 'resident.purok.label', default: 'Purok')}" />
+					
 						<g:sortableColumn property="residentNumber" title="${message(code: 'resident.residentNumber.label', default: 'Resident Number')}" />
 
+						<g:sortableColumn property="residentLastName" title="${message(code: 'resident.residentLastName.label', default: 'Resident Name')}" />
+						
 						<g:sortableColumn property="householdRole" title="${message(code: 'resident.householdRole.label', default: 'Household Role')}" />
 
-						<g:sortableColumn property="residentLastName" title="${message(code: 'resident.residentLastName.label', default: 'Resident Name')}" />
 						
 						<g:sortableColumn property="age" title="${message(code: 'resident.age.label', default: 'Age')}" />
 
@@ -67,12 +70,16 @@
 				<tbody>
 				<g:each in="${residentInstanceList}" status="i" var="residentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-
+					
+						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "purok")}</g:link></td>
+					
 						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "residentNumber")}</g:link></td>
+						
+						<td>${fieldValue(bean: residentInstance, field: "residentName")}</td>
 
 						<td>${fieldValue(bean: residentInstance, field: "householdRole")}</td>
 
-						<td>${fieldValue(bean: residentInstance, field: "residentName")}</td>
+						
 						
 						<td>${fieldValue(bean: residentInstance, field: "age")}</td>
 

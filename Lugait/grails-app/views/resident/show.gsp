@@ -93,17 +93,17 @@
 	
 		
 			<b>Spouse Name:</b>		<g:fieldValue bean="${residentInstance}" field="residentSpouseName"/><br>
-			<b>Children:</b>			<g:fieldValue bean="${residentInstance}" field="residentChildName"/><br>
+			<b>Children:</b>			<g:fieldValue bean="${residentInstance}" field="residentChildName"/><br> 	
 			<b>Educational Attainment:</b>		<g:fieldValue bean="${residentInstance}" field="educationalAttainment"/><br>
 			<b>Means of Living:</b>		<g:fieldValue bean="${residentInstance}" field="meansOfLiving"/><br>
 			<b>Employment Status:</b> 	<g:fieldValue bean="${residentInstance}" field="employmentStatus"/><br>
 	</td>
 	<td>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Monthly Income:</b> 	<g:fieldValue bean="${residentInstance}" field="monthlyIncome"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Environmental Sanitation:</b>	<g:formatDate birthDate="${residentInstance}" field="environmentalSanitation"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Means of Drinking Water:</b>			<g:fieldValue bean="${residentInstance}" field="meansOfDrinkingWater"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Disabilities:</b>		<g:fieldValue bean="${residentInstance}" field="disabilities"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Medical History:</b>		<g:fieldValue bean="${residentInstance}" field="medHistory"/><br>
+				 <b>Monthly Income:</b> 	<g:fieldValue bean="${residentInstance}" field="monthlyIncome"/><br>
+				<b>Environmental Sanitation:</b>	<g:formatDate birthDate="${residentInstance}" field="environmentalSanitation"/><br>
+				<b>Means of Drinking Water:</b>			<g:fieldValue bean="${residentInstance}" field="meansOfDrinkingWater"/><br>
+				<b>Disabilities:</b>		<g:fieldValue bean="${residentInstance}" field="disabilities"/><br>
+				<b>Medical History:</b>		<g:fieldValue bean="${residentInstance}" field="medHistory"/><br>
 	</td>
 	</table>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
