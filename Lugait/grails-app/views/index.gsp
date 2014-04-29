@@ -39,8 +39,8 @@
 		}
 
 		.carousel-control {
-		  height: 80px;
-		  margin-top: 0;
+		  height: 100px;
+		  margin-top: 2;
 		  font-size: 120px;
 		  text-shadow: 0 1px 1px rgba(0,0,0,.4);
 		  background-color: transparent;
@@ -70,7 +70,7 @@
 		.carousel-caption .lead {
 		  margin: 0;
 		  line-height: 1.25;
-		  color: #fff;
+		  color: #FFF;
 		  text-shadow: 0 1px 1px rgba(0,0,0,.4);
 		}
 		.carousel-caption .btn {
@@ -198,38 +198,39 @@
 		<div id="myCarousel" class="carousel slide">
 		  <div class="carousel-inner">
 			<div class="item active">
-			  <img src="images/a.jpg" alt="">
+			  <img src="images/BB.jpg" alt="">
 			  <div class="container">
 				<div class="carousel-caption">
 				</div>
 			  </div>
 			</div>
 			<div class="item">
-			  <img src="images/b.jpg" alt="">
+			  <img src="images/FF.jpg" alt="">
 			  <div class="container">
 				<div class="carousel-caption">
 				</div>
 			  </div>
 			</div>
 			<div class="item">
-			  <img src="images/c.jpg" alt="">
+			  <img src="images/DD.jpg" alt="">
 			  <div class="container">
 				<div class="carousel-caption">
 				</div>
 			  </div>
 			</div>
 			<div class="item">
-			  <img src="images/d.jpg" alt="">
+			  <img src="images/CC.jpg" alt="">
 			  <div class="container">
 				<div class="carousel-caption">
 				</div>
 			  </div>
 			</div>
 			<div class="item">
-			  <img src="images/e.jpg" alt="">
+			  <img src="images/EE.jpg" alt="">
 			  <div class="container">
 				<div class="carousel-caption">
 				</div>
+
 			  </div>
 			</div>
 		  </div>
