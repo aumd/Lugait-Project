@@ -61,5 +61,7 @@ class Resident {
 	
 	String toString(){
 	"${this.residentNumber} ${residentName}"
+	"${this.purok} ${residentName}"
+	"${this.age} ${residentName}"
 	}
 }
