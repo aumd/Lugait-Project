@@ -38,7 +38,7 @@
 		<!-- SEARCH FOR PUROK -->
 		<fieldset class="">
 					<g:form action="searchResident" controller="resident" class="">
-					<g:select name="residentNumber" value="${params.input}" size="1" from="${["Please select Purok", "Purok Andres Bonifacio", "Purok Mabini", "Purok Macao", "Purok Masilakon 1", "Purok Masilakon 2", "Purok Mauswagon", "Purok Rizal", "Purok Salimbal"]}"/>
+					<g:select name="residentNumber" value="${params.input}" size="1" from="${["-Please select Purok-", "Purok Andres Bonifacio", "Purok Mabini", "Purok Macao", "Purok Masilakon 1", "Purok Masilakon 2", "Purok Mauswagon", "Purok Rizal", "Purok Salimbal"]}"/>
 					<g:submitButton name="search" button class="btn btn-default" value="Search" />
 					</g:form>
 		</fieldset>
