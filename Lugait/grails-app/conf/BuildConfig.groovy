@@ -60,5 +60,9 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.1'
 		compile ":font-awesome-resources:4.0.3.0"
 		compile ":searchable:0.6.4"
+		
+		compile ':kickstart-with-bootstrap:0.8.9'
+		compile ':lesscss-resources:1.3.0.3'
+		compile 
     }
 }

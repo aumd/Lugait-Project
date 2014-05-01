@@ -7,7 +7,8 @@ class ResidentController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "list", params: params)
+        //redirect(action: "list", params: params)
+		render(view:"mainpage")
     }
 
     def list(Integer max) {
