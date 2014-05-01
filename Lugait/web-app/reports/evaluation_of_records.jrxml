@@ -13,7 +13,7 @@
 	</parameter>
 	<queryString><![CDATA[select * from resident where resident.id = $P{residentId}]]></queryString>
 	<field name="address" class="java.lang.String"/>
-	<field name="age" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
 	<field name="birth_date" class="java.util.Date"/>
 	<field name="resident_child_name" class="java.lang.String"/>
 	<field name="disabilities" class="java.lang.String"/>

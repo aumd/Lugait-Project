@@ -10,7 +10,7 @@ class Resident {
 	String address
 	String religion
 	String precinctNumber
-	String age
+	Integer age
 	
 	String status
 	String residentSpouseName

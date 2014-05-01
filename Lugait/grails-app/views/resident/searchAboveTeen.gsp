@@ -44,13 +44,13 @@
 		</fieldset>
 		<!-- END SEARCH FOR PUROK -->
 		
-		<!-- Search resident age above 18 -->
+		<!--  -->
 		<fieldset class="">
 			<g:form action="searchAboveTeen" controller="resident" class="">
 				<input type="submit" class="btn btn-default btn-medium" value="View Resident Above 18">
 			</g:form>
 		</fieldset>
-		<!-- End search resident age above 18 -->
+		<!--  -->
 
 		</div>
 		<div id="list-resident" class="content scaffold-list" role="main">
@@ -85,34 +85,29 @@
 				</thead>
 
 				<tbody>
-				<g:each in="${residentInstanceList}" status="i" var="residentInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+				<g:each in="${requests}" var="residentInstance">
+					<tr>
 					
-						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "purok")}</g:link></td>
+						<td><g:link action="show" id="${residentInstance.id}">${residentInstance.purok}</g:link></td>
 					
-						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "residentNumber")}</g:link></td>
+						<td><g:link action="show" id="${residentInstance.id}">${residentInstance.resident_number}</g:link></td>
 						
-						<td>${fieldValue(bean: residentInstance, field: "residentName")}</td>
+						<td>${residentInstance.resident_name}</td>
 
-						<td>${fieldValue(bean: residentInstance, field: "householdRole")}</td>
-
+						<td>${residentInstance.household_role}</td>
 						
-						
-						<td>${fieldValue(bean: residentInstance, field: "age")}</td>
+						<td>${residentInstance.age}</td>
 
-						<td><g:formatDate format="MM-dd-yyyy" date="${residentInstance.birthDate}" /></td>
+						<td><g:formatDate format="MM-dd-yyyy" date="${residentInstance.birth_date}" /></td>
 
-						<td>${fieldValue(bean: residentInstance, field: "address")}</td>
+						<td>${residentInstance.address}</td>
 
-						<td>${fieldValue(bean: residentInstance, field: "religion")}</td>
+						<td>${residentInstance.religion}</td>
 
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${residentInstanceTotal}" />
-			</div>
 		</div>
 	</body>
 </html>

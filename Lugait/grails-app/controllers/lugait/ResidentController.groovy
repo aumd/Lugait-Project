@@ -1,6 +1,8 @@
 package lugait
 
 import org.springframework.dao.DataIntegrityViolationException
+import groovy.sql.Sql
+import groovy.sql.GroovyRowResult
 
 class ResidentController {
 
@@ -118,6 +120,13 @@ class ResidentController {
 				flash.message = message(code: '')
 				redirect(action:"list")
 			}
+	}
+	
+	def dataSource
+	def searchAboveTeen() { 
+		def db = new Sql(dataSource);
+		def requests = db.rows("Select * from resident where age between 19 and 120")
+		render(view:"searchAboveTeen", model:[requests:requests])
 	}
 
 }
