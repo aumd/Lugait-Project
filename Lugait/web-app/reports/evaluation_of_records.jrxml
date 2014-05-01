@@ -26,6 +26,7 @@
 	<field name="med_history" class="java.lang.String"/>
 	<field name="monthly_income" class="java.lang.String"/>
 	<field name="precinct_number" class="java.lang.String"/>
+	<field name="purok" class="java.lang.String"/>
 	<field name="religion" class="java.lang.String"/>
 	<field name="resident_name" class="java.lang.String"/>
 	<field name="resident_number" class="java.lang.String"/>
@@ -112,26 +113,30 @@
 				</textElement>
 				<textFieldExpression class="java.lang.String">
 					<![CDATA[
-					"Resident Number: " + $F{resident_number} + " \n" +
-					"Resident Name: " + $F{resident_name} + " \n" +
-					"Age: " + $F{age} + " \n" +
-					"Household Role: " + $F{household_role} + " \n" +
-					"Birth Date: " + (new SimpleDateFormat("MM-dd-yyyy").format($F{birth_date})) + " \n" +
-					"Address: " + $F{address} + " \n" +
-					"Religion: " + $F{religion} + " \n" +
-					"Precinct Number: " + $F{precinct_number} + " \n" +
-					"Status: " + $F{status} + " \n" +
-					"Spouse Name: " + $F{resident_spouse_name} + " \n" +
-					"Children: " + $F{resident_child_name} + " \n" +
-					"Educational Attainment: " + $F{educational_attainment} + " \n" +
-					"Means Of Living: " + $F{means_of_living} + " \n" +
-					"Employment Status: " + $F{employment_status} + " \n" +
-					"Monthly Income: " + $F{monthly_income} + " \n" +
-					"Environmental Sanitation: " + $F{environmental_sanitation} + " \n" +
-					"Means Of Drinking Water: " + $F{means_of_drinking_water} + " \n" +
-					"Disabilities: " + $F{disabilities} + " \n" +
-					"Medical History: " + $F{med_history} + " \n"
+					"Purok:  " 		+ $F{purok} + " \n\n" +
+					"Precinct Number:  " + $F{precinct_number} + " \n" +
+					"Resident Number:  " + $F{resident_number} + " \n" +
+					"Resident Name:  " + $F{resident_name} + " \n" +
+					"Address:  " + $F{address} + " \n" +
+					"Status:  " + $F{status} + " \n" +
+					"Household Role:  " + $F{household_role} + " \n" +
+					"Age:  " + $F{age} + " \n" +
+					"Birth Date:  " + (new SimpleDateFormat("MM-dd-yyyy").format($F{birth_date})) + " \n" +
+					"Religion:  " + $F{religion} + " \n\n" +
+					
+					"Spouse Name:  " + $F{resident_spouse_name} + " \n" +
+					"Children:  " + $F{resident_child_name} + " \n\n" +
+					
+					"Educational Attainment:  " + $F{educational_attainment} + " \n" +
+					"Means Of Living:  " + $F{means_of_living} + " \n" +
+					"Employment Status:  " + $F{employment_status} + " \n" +
+					"Monthly Income:  " + $F{monthly_income} + " \n" +
+					"Environmental Sanitation:  " + $F{environmental_sanitation} + " \n" +
+					"Means Of Drinking Water:  " + $F{means_of_drinking_water} + " \n" +
+					"Disabilities:  " + $F{disabilities} + " \n" +
+					"Medical History:  " + $F{med_history} + " \n"
 					]]>
+				
 				</textFieldExpression>
 				
 			</textField>
@@ -167,4 +172,5 @@
 			</staticText>
 		</band>
 	</summary>
+	
 </jasperReport>
