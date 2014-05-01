@@ -32,7 +32,11 @@
 		  <li><a href="http://localhost:8080/Lugait/Resident">		               </a></li>
 		  <li><a href="http://localhost:8080/Lugait/Resident">		               </a></li>
 		  <li><a href="http://localhost:8080/Lugait/Resident">		               </a></li>
-		  <a href="http://localhost:8080/Lugait/user/logout" class="btn btn-danger" data-dismiss="modal">Logout</a>
+		  <li><a href="http://localhost:8080/Lugait/Resident">		               </a></li>
+		  <li><a href="http://localhost:8080/Lugait/Resident">		               </a></li>
+		  
+ 
+		  <a href="http://localhost:8080/Lugait/user/logout" class="btn btn-primary" data-dismiss="modal">Logout</a>
 		 <li></li>
 		 
 		  

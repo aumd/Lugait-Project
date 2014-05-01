@@ -279,7 +279,7 @@
 		<script>
 		  $(document).ready(function(){
 			$('#myCarousel').carousel({
-			  interval: 20
+			  interval: 10
 			});
 		  });
 		</script>
