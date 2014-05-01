@@ -244,8 +244,11 @@
 		</div>--%>
 	</g:if>
 	<g:if test="${session.user }">
-		<br/>
-		Login as : ${session.user } | <g:link action="logout">Logout</g:link>
+		<center>
+			<h3><font color="gray">Login as : ${session.user } | </font>
+			<g:link url="http://localhost:8080/Lugait/Resident"><font color="white">Home Page</font></g:link></h3>
+			<a href="http://localhost:8080/Lugait/user/logout" class="btn btn-danger">Logout</a>
+		</center>
 	</g:if>
 	<g:else>
 		<div class="container">
