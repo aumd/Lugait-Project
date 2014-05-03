@@ -247,7 +247,21 @@
 		<center>
 			<h3><font color="gray">Login as : ${session.user } | </font>
 			<g:link url="http://localhost:8080/Lugait/Resident"><font color="white">Home Page</font></g:link></h3>
-			<a href="http://localhost:8080/Lugait/user/logout" class="btn btn-danger">Logout</a>
+			<a href="#example" class="btn btn-danger" data-toggle="modal">Logout</a>
+			<div id="example" class="modal hide fade in" style="display: none; ">
+				<div class="modal-header">
+					<a class="close icon-remove" data-dismiss="modal"></a>
+					<h3>Are you sure you want to logout?</h3>
+				</div>
+				<div class="modal-body">
+					<center>
+						<a href="http://localhost:8080/Lugait/user/logout" class="btn btn-danger">Yes</a>
+						<a href="#" class="btn btn-primary" data-dismiss="modal">No</a>
+					</center>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
 		</center>
 	</g:if>
 	<g:else>
