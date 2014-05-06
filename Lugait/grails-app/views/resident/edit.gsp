@@ -16,11 +16,11 @@
 
 		<div class="span8">
 
-		<div align="right">	
+		<div align="left">	
 		<ul class="nav nav-pills" style="border: solid 0px #d3d3d3;">
 
 		<div id="edit-resident" class="content scaffold-edit" role="main">
-			<h3><center>Update Resident Information</center></h3>
+			<h1><center>Update Resident Information</center></h1>
 
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
