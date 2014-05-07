@@ -51,6 +51,12 @@
 			</g:form>
 		</fieldset>
 		<!-- End search resident age above 18 -->
+		
+		<fieldset class="">
+			<g:form action="updateAllAge" controller="resident" class="">
+				<input type="submit" class="btn btn-default btn-medium" value="Update Age">
+			</g:form>
+		</fieldset>
 
 		</div>
 		<div id="list-resident" class="content scaffold-list" role="main">
@@ -100,7 +106,7 @@
 						
 						<td>${fieldValue(bean: residentInstance, field: "age")}</td>
 
-						<td><g:formatDate format="MM-dd-yyyy" date="${residentInstance.birthDate}" /></td>
+						<td>${fieldValue(bean: residentInstance, field: "birthMonth")}-${fieldValue(bean: residentInstance, field: "birthDate")}-${fieldValue(bean: residentInstance, field: "birthYear")}</td>
 
 						<td>${fieldValue(bean: residentInstance, field: "address")}</td>
 

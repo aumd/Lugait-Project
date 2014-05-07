@@ -6,7 +6,9 @@ class Resident {
 	String residentNumber
 	String householdRole
 	String residentName
-	Date birthDate
+	Integer birthMonth
+	Integer birthDate
+	Integer birthYear
 	String address
 	String religion
 	String precinctNumber
@@ -35,7 +37,9 @@ class Resident {
 		residentName(blank:false)
 		residentNumber(blank:false, unique:true)
 		householdRole(blank:false, inList: ["Family Head", "Family Member", "Others"])
+		birthMonth(blank:false)
 		birthDate(blank:false)
+		birthYear(blank:false)
 		address(blank:false)
 		religion(blank:false, inList: ["Roman Catholic", "SDA", "Protestant", "Baptist", "Iglesia ni Cristo", "Jehovah's Witness", "Others"])
 		precinctNumber(blank:false)

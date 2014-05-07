@@ -81,7 +81,7 @@
 	<td>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Household Role:</b> 	<g:fieldValue bean="${residentInstance}" field="householdRole"/><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Age:</b>				<g:fieldValue bean="${residentInstance}" field="age"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Birthdate:</b>	<g:formatDate birthDate="${residentInstance?.birthDate}" format="MMM-dd-yyyy"/><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Birthdate:</b>	<g:fieldValue bean="${residentInstance}" field="birthMonth"/>-<g:fieldValue bean="${residentInstance}" field="birthDate"/>-<g:fieldValue bean="${residentInstance}" field="birthYear"/><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Religion:</b>			<g:fieldValue bean="${residentInstance}" field="religion"/><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Status:</b>		<g:fieldValue bean="${residentInstance}" field="status"/><br
 	</td>
@@ -100,7 +100,7 @@
 	</td>
 	<td>
 				 <b>Monthly Income:</b> 	<g:fieldValue bean="${residentInstance}" field="monthlyIncome"/><br>
-				<b>Environmental Sanitation:</b>	<g:formatDate birthDate="${residentInstance}" field="environmentalSanitation"/><br>
+				<b>Environmental Sanitation:</b>	<g:fieldValue bean="${residentInstance}" field="environmentalSanitation"/><br>
 				<b>Means of Drinking Water:</b>			<g:fieldValue bean="${residentInstance}" field="meansOfDrinkingWater"/><br>
 				<b>Disabilities:</b>		<g:fieldValue bean="${residentInstance}" field="disabilities"/><br>
 				<b>Medical History:</b>		<g:fieldValue bean="${residentInstance}" field="medHistory"/><br>
@@ -113,6 +113,10 @@
 			<g:link class="btn " controller="report" action="showReport" id="${residentInstance?.id}">Resident Reports</g:link></br>
 			
 			</ol>
+			<!-- <ol>	
+			<g:link class="btn " controller="resident" action="calculateAge" id="${residentInstance?.id}">Update Age</g:link></br>
+			
+			</ol> -->
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<g:form>
 				<fieldset class="buttons">

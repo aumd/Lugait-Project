@@ -128,5 +128,92 @@ class ResidentController {
 		def requests = db.rows("Select * from resident where age between 19 and 120")
 		render(view:"searchAboveTeen", model:[requests:requests])
 	}
+	
+	def calculateAge(Long id) {
+		def db = new Sql(dataSource)
+    	//def result = db.rows("""select count (age) from resident""")
+		//int counter = result.get(0).count
+		//def residentInstance = Resident.get(id)
+		def all = db.rows("""select * from resident where id='${id}'""")
+		//def birthDate = db.rows("""select birth_date from resident where id=${id}""")
+		//def birthYear = db.rows("""select birth_year from resident where id=${id}""")
+		def info = all.get(0)
+		def birthMonth = info.birth_month
+		def birthDate = info.birth_date
+		def birthYear = info.birth_year
+		
+		def today= new GregorianCalendar()
+		def dob= new GregorianCalendar()
+		dob.set(Calendar.ERA, GregorianCalendar.AD)
+		dob.set(Calendar.YEAR, birthYear)
+		dob.set(Calendar.MONTH, birthMonth) //0 is January and 3 is April
+		dob.set(Calendar.DATE, birthDate)
+		 
+		def userMonth0=dob.get(Calendar.MONTH)
+		def userMonth1=userMonth0-1
+		def userDay=dob.get(Calendar.DATE)
+		def todayMonth0=today.get(Calendar.MONTH)
+		def todayMonth1=todayMonth0
+		def todayDay=today.get(Calendar.DATE)
+		 
+		if (todayMonth1 > userMonth1){
+			def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)
+			db.execute("""update resident set age='${res}' where id='${id}' """)
+			def residentInstance = Resident.get(id)
+			flash.message = message(code: 'default.updated.message', args: [message(code: 'resident.label', default: 'Resident'), residentInstance.id])
+			redirect(action: "show", id: residentInstance.id)
+		}else if(todayMonth1 == userMonth1 && todayDay >= userDay){
+			def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)
+			db.execute("""update resident set age='${res}' where id='${id}' """)
+			def residentInstance = Resident.get(id)
+			flash.message = message(code: 'default.updated.message', args: [message(code: 'resident.label', default: 'Resident'), residentInstance.id])
+			redirect(action: "show", id: residentInstance.id)
+		}else{
+			def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)-1
+			db.execute("""update resident set age='${res}' where id='${id}' """)
+			def residentInstance = Resident.get(id)
+			flash.message = message(code: 'default.updated.message', args: [message(code: 'resident.label', default: 'Resident'), residentInstance.id])
+			redirect(action: "show", id: residentInstance.id)
+		}
+	}
+	
+	def updateAllAge() {
+		def db = new Sql(dataSource)
+    	def result = db.rows("""select count (age) from resident""")
+		int counter = result.get(0).count
+		for(int init=0; counter > init; counter--) {
+			def all = db.rows("""select * from resident where id='${counter}'""")
+			def info = all.get(0)
+			def birthMonth = info.birth_month
+			def birthDate = info.birth_date
+			def birthYear = info.birth_year
+			
+			def today= new GregorianCalendar()
+			def dob= new GregorianCalendar()
+			dob.set(Calendar.ERA, GregorianCalendar.AD)
+			dob.set(Calendar.YEAR, birthYear)
+			dob.set(Calendar.MONTH, birthMonth) //0 is January and 3 is April
+			dob.set(Calendar.DATE, birthDate)
+			 
+			def userMonth0=dob.get(Calendar.MONTH)
+			def userMonth1=userMonth0-1
+			def userDay=dob.get(Calendar.DATE)
+			def todayMonth0=today.get(Calendar.MONTH)
+			def todayMonth1=todayMonth0
+			def todayDay=today.get(Calendar.DATE)
+			 
+			if (todayMonth1 > userMonth1){
+				def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)
+				db.execute("""update resident set age='${res}' where id='${counter}' """)
+			}else if(todayMonth1 == userMonth1 && todayDay >= userDay){
+				def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)
+				db.execute("""update resident set age='${res}' where id='${counter}' """)
+			}else{
+				def res = today.get(Calendar.YEAR)-dob.get(Calendar.YEAR)-1
+				db.execute("""update resident set age='${res}' where id='${counter}' """)
+			}
+		}
+		redirect(action: "list")
+	}
 
 }

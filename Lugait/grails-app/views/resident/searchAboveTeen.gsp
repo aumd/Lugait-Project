@@ -44,13 +44,19 @@
 		</fieldset> -->
 		<!-- END SEARCH FOR PUROK -->
 		
-		<!--  -->
+		<!-- Search resident age above 18 -->
 		<fieldset class="">
 			<g:form action="searchAboveTeen" controller="resident" class="">
 				<input type="submit" class="btn btn-default btn-medium" value="View Resident Above 18">
 			</g:form>
 		</fieldset>
-		<!--  -->
+		<!-- End search resident age above 18 -->
+		
+		<fieldset class="">
+			<g:form action="updateAllAge" controller="resident" class="">
+				<input type="submit" class="btn btn-default btn-medium" value="Update Age">
+			</g:form>
+		</fieldset>
 
 		</div>
 		<div id="list-resident" class="content scaffold-list" role="main">
@@ -98,7 +104,7 @@
 						
 						<td>${residentInstance.age}</td>
 
-						<td><g:formatDate format="MM-dd-yyyy" date="${residentInstance.birth_date}" /></td>
+						<td>${residentInstance.birth_month}-${residentInstance.birth_date}-${residentInstance.birth_year}</td>
 
 						<td>${residentInstance.address}</td>
 

@@ -44,7 +44,7 @@
 			<b>Resident Number:</b>		${residentInstance?.residentNumber}<br>
 			<b>Resident Name:</b>		${residentInstance?.residentName}<br>
 			<b>Address:</b>					${residentInstance?.address}<br>
-			<b>Birthdate:</b>					<g:formatDate format="MM-dd-yyyy" date="${residentInstance?.birthDate}" /><br>
+			<b>Birthdate:</b>					${residentInstance?.birthMonth}-${residentInstance?.birthDate}-${residentInstance?.birthYear}<br>
 			<b>Age:</b>					${residentInstance?.age}<br>
 	</td>
 	<td>
