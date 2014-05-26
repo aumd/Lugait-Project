@@ -13,6 +13,9 @@
 	</parameter>
 	<queryString><![CDATA[select * from resident where resident.id = $P{residentId}]]></queryString>
 	<field name="address" class="java.lang.String"/>
+	<field name="birth_date" class="java.lang.Integer"/>
+	<field name="birth_month" class="java.lang.Integer"/>
+	<field name="birth_year" class="java.lang.Integer"/>
 	<field name="age" class="java.lang.Integer"/>
 	<field name="resident_child_name" class="java.lang.String"/>
 	<field name="disabilities" class="java.lang.String"/>
@@ -158,6 +161,7 @@
 					"	Resident Number: 	" + $F{resident_number} + " \n" +
 					"	Resident Name:  	" + $F{resident_name} + " \n" +
 					"	Address:		" + $F{address} + " \n" +
+					"	Birthdate:		" + $F{birth_month} + "-" + $F{birth_date} + "-" + $F{birth_year} + " \n" +
 					"	Status:		" + $F{status} + " \n" +
 					"	Household Role:	" + $F{household_role} + " \n" +
 					"	Age:  			" + $F{age} + " \n" +
