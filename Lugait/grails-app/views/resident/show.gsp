@@ -24,7 +24,7 @@
 		<!--FOR SEARCH-->
 
 		<li>
-		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/list">
+		<a class="btn btn-small btn-info" href="http://localhost:8080/Lugait/resident/mainlist">
 		<i class="icon-info-sign"></i> Resident Listing</a>
 		</li>
 		<div align="right"
@@ -81,7 +81,7 @@
 	<td>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Household Role:</b> 	<g:fieldValue bean="${residentInstance}" field="householdRole"/><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Age:</b>				<g:fieldValue bean="${residentInstance}" field="age"/><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Birthdate:</b>	<g:fieldValue bean="${residentInstance}" field="birthMonth"/>-<g:fieldValue bean="${residentInstance}" field="birthDate"/>-<g:fieldValue bean="${residentInstance}" field="birthYear"/><br>
+				<!-- <b>Birthdate:</b>	<g:fieldValue bean="${residentInstance}" field="birthMonth"/>/<g:fieldValue bean="${residentInstance}" field="birthDate"/>/<g:fieldValue bean="${residentInstance}" field="birthYear"/><br> -->
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Religion:</b>			<g:fieldValue bean="${residentInstance}" field="religion"/><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<b>Status:</b>		<g:fieldValue bean="${residentInstance}" field="status"/><br
 	</td>

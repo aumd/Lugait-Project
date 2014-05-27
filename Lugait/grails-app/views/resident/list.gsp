@@ -28,7 +28,7 @@
 
 		<fieldset class="">
 					<g:form action="searchResident" controller="resident" class="">
-					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No. and Age"/>
+					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
 					<g:submitButton name="search" button class="btn btn-default" value="Search" />
 					</g:form>
 			</fieldset>
@@ -81,7 +81,7 @@
 						
 						<g:sortableColumn property="age" title="${message(code: 'resident.age.label', default: 'Age')}" />
 
-						<g:sortableColumn property="birthDate" title="${message(code: 'resident.birthDate.label', default: 'Birth Date')}" />
+						<!-- <g:sortableColumn property="birthDate" title="${message(code: 'resident.birthDate.label', default: 'Birth Date')}" /> -->
 
 						<g:sortableColumn property="address" title="${message(code: 'resident.address.label', default: 'Address')}" />
 
@@ -106,7 +106,7 @@
 						
 						<td>${fieldValue(bean: residentInstance, field: "age")}</td>
 
-						<td>${fieldValue(bean: residentInstance, field: "birthMonth")}-${fieldValue(bean: residentInstance, field: "birthDate")}-${fieldValue(bean: residentInstance, field: "birthYear")}</td>
+						<!-- <td>${fieldValue(bean: residentInstance, field: "birthMonth")}-${fieldValue(bean: residentInstance, field: "birthDate")}-${fieldValue(bean: residentInstance, field: "birthYear")}</td> -->
 
 						<td>${fieldValue(bean: residentInstance, field: "address")}</td>
 

@@ -2,11 +2,11 @@ package lugait
 
 class User {
 
-	String username
-    String password 
+	String header
+    String data 
 
     static constraints = {
-		username(unique:true, blank:false) 
-        password(blank:false) 
+		header(unique:true, blank:false) 
+        data(blank:false) 
     }
 }

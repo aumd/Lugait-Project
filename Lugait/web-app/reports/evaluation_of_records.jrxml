@@ -161,7 +161,7 @@
 					"	Resident Number: 	" + $F{resident_number} + " \n" +
 					"	Resident Name:  	" + $F{resident_name} + " \n" +
 					"	Address:		" + $F{address} + " \n" +
-					"	Birthdate:		" + $F{birth_month} + "-" + $F{birth_date} + "-" + $F{birth_year} + " \n" +
+					"	Birthdate:		" + $F{birth_month} + "/" + $F{birth_date} + "/" + $F{birth_year} + " \n" +
 					"	Status:		" + $F{status} + " \n" +
 					"	Household Role:	" + $F{household_role} + " \n" +
 					"	Age:  			" + $F{age} + " \n" +

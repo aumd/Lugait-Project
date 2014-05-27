@@ -111,14 +111,14 @@ class ResidentController {
 			def srchResults = searchableService.search(residentNumber)
 			def results = srchResults.results
 			if(results)
-			render(view: "list", model: [residentInstanceList: results, residentInstanceTotal: results.size()])	
+			render(view: "list_2", model: [residentInstanceList: results, residentInstanceTotal: results.size()])	
 			else{
 				flash.message = message(code: 'Resident not found')
-				redirect(action:"list")
+				redirect(action:"list_2")
 			}
 		}else{
 				flash.message = message(code: '')
-				redirect(action:"list")
+				redirect(action:"list_2")
 			}
 	}
 	
@@ -214,6 +214,12 @@ class ResidentController {
 			}
 		}
 		redirect(action: "list")
+	}
+	
+	def mainlist() { 
+		def db = new Sql(dataSource);
+		def requests = db.rows("Select * from resident")
+		render(view:"mainlist", model:[requests:requests])
 	}
 
 }

@@ -28,7 +28,7 @@
 
 		<fieldset class="">
 					<g:form action="searchResident" controller="resident" class="">
-					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No. and Age"/>
+					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
 					<g:submitButton name="search" button class="btn btn-default" value="Search" />
 					</g:form>
 			</fieldset>

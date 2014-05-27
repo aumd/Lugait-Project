@@ -28,7 +28,7 @@
 
 		<fieldset class="">
 					<g:form action="searchResident" controller="resident" class="">
-					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No. and Age"/>
+					<g:textField name="residentNumber" value="${params.input}" size="20" placeholder="Search Resident ID No."/>
 					<g:submitButton name="search" button class="btn btn-default" value="Search" />
 					</g:form>
 			</fieldset>
@@ -36,12 +36,12 @@
 		<!-- SEARCH ENDS HERE--->
 		
 		<!-- SEARCH FOR PUROK -->
-		<!-- <fieldset class="">
-					<g:form action="searchResident" controller="resident" class="">
-					<g:select name="residentNumber" value="${params.input}" size="1" from="${["-Please select Purok-", "Purok Andres Bonifacio", "Purok Mabini", "Purok Macao", "Purok Masilakon 1", "Purok Masilakon 2", "Purok Mauswagon", "Purok Rizal", "Purok Salimbal"]}"/>
-					<g:submitButton name="search" button class="btn btn-default" value="Search" />
-					</g:form>
-		</fieldset> -->
+		<!-- <fieldset class=""> -->
+				<!--	<g:form action="searchResident" controller="resident" class=""> -->
+				<!--	<g:select name="residentNumber" value="${params.input}" size="1" from="${["-Please select Purok-", "Purok Andres Bonifacio", "Purok Mabini", "Purok Macao", "Purok Masilakon 1", "Purok Masilakon 2", "Purok Mauswagon", "Purok Rizal", "Purok Salimbal"]}"/> -->
+				<!--	<g:submitButton name="search" button class="btn btn-default" value="Search" /> -->
+				<!--	</g:form> -->
+		<!-- </fieldset> -->
 		<!-- END SEARCH FOR PUROK -->
 		
 		<!-- Search resident age above 18 -->
@@ -79,9 +79,9 @@
 						<g:sortableColumn property="householdRole" title="${message(code: 'resident.householdRole.label', default: 'Household Role')}" />
 
 						
-						<g:sortableColumn property="age" title="${message(code: 'resident.age.label', default: 'Age')}" />
+						<!-- <g:sortableColumn property="age" title="${message(code: 'resident.age.label', default: 'Age')}" /> -->
 
-						<g:sortableColumn property="birthDate" title="${message(code: 'resident.birthDate.label', default: 'Birth Date')}" />
+						<!-- <g:sortableColumn property="birthDate" title="${message(code: 'resident.birthDate.label', default: 'Birth Date')}" /> -->
 
 						<g:sortableColumn property="address" title="${message(code: 'resident.address.label', default: 'Address')}" />
 
@@ -91,29 +91,34 @@
 				</thead>
 
 				<tbody>
-				<g:each in="${requests}" var="residentInstance">
-					<tr>
+				<g:each in="${residentInstanceList}" status="i" var="residentInstance">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${residentInstance.id}">${residentInstance.purok}</g:link></td>
+						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "purok")}</g:link></td>
 					
-						<td><g:link action="show" id="${residentInstance.id}">${residentInstance.resident_number}</g:link></td>
+						<td><g:link action="show" id="${residentInstance.id}">${fieldValue(bean: residentInstance, field: "residentNumber")}</g:link></td>
 						
-						<td>${residentInstance.resident_name}</td>
+						<td>${fieldValue(bean: residentInstance, field: "residentName")}</td>
 
-						<td>${residentInstance.household_role}</td>
+						<td>${fieldValue(bean: residentInstance, field: "householdRole")}</td>
+
 						
-						<td>${residentInstance.age}</td>
+						
+						<!-- <td>${fieldValue(bean: residentInstance, field: "age")}</td> -->
 
-						<td>${residentInstance.birth_month}/${residentInstance.birth_date}/${residentInstance.birth_year}</td>
+						<!-- <td>${fieldValue(bean: residentInstance, field: "birthMonth")}-${fieldValue(bean: residentInstance, field: "birthDate")}-${fieldValue(bean: residentInstance, field: "birthYear")}</td> -->
 
-						<td>${residentInstance.address}</td>
+						<td>${fieldValue(bean: residentInstance, field: "address")}</td>
 
-						<td>${residentInstance.religion}</td>
+						<td>${fieldValue(bean: residentInstance, field: "religion")}</td>
 
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
+			<div class="pagination">
+				<g:paginate total="${residentInstanceTotal}" />
+			</div>
 		</div>
 	</body>
 </html>

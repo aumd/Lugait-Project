@@ -14,13 +14,13 @@ class UserController {
 	}
 
 	def login = {
-		def paramusername = params.user_name
-    	def parampassword = params.password
+		def paramheader = params.header
+    	def paramdata = params.data
 
 		def db = new Sql(dataSource)
-    	def accountUsername = db.rows("select user_name from account")
-		def accountPassword = db.rows("select password from account")
-    	def result = db.rows("""select count (*) from account where user_name='${paramusername}' and password='${parampassword}'""")
+    	def accountHeader = db.rows("select header from account")
+		def accountData = db.rows("select data from account")
+    	def result = db.rows("""select count (*) from account where header='${paramheader}' and data='${paramdata}'""")
     	int counter = result.get(0).count
 
 		if(counter == 1){

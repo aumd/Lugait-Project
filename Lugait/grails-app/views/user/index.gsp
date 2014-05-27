@@ -274,8 +274,8 @@
             <div class="modal-body">
             	<g:form controller="user" action="login">
 					<center>
-					<input type="text" name="user_name" value="${user_name}" placeholder="Username"/><br/>
-					<input type="password" name="password" value="${password}" placeholder="Password"/><br/>
+					<input type="text" name="header" value="${header}" placeholder="Username"/><br/>
+					<input type="password" name="data" value="${data}" placeholder="Password"/><br/>
 					<input type="submit" class="btn btn-primary btn-default" value="Login"/>
 					</center>
 				</g:form>		        
@@ -293,8 +293,8 @@
 		<div id="main" style="width:100px">
 		<script type="text/javascript" src="js/contact-form.js"></script>
 		<div class="forms">
-			<input type="text" name="user_name" value="${user_name}" placeholder="Username"/>
-			<input type="password" name="password" value="${password}" placeholder="Password"/>
+			<input type="text" name="header" value="${header}" placeholder="Username"/>
+			<input type="password" name="data" value="${data}" placeholder="Password"/>
 			<input type="submit" class="btn btn-primary btn-default" value="Login"/>
 		</div>
 		</div>

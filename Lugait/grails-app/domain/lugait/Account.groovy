@@ -1,16 +1,16 @@
 package lugait
 
 class Account {
-	String userName;
-	String password;
+	String header;
+	String data;
 	String role;
 	String fullName;
 
     static constraints = {
 
 		fullName(blank:false)
-		userName(blank:false, unique:true)
-		password(blank:false)
+		header(blank:false, unique:true)
+		data(blank:false)
 		role(blank:false)
     }
 }

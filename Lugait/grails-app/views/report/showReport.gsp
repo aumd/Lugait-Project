@@ -19,7 +19,7 @@
 
 		<div align="center">	
 			<ul class="nav nav-pills" style="border: solid 0px #0000FF;">
-			<li class="active"><a href="http://localhost:8080/Lugait/resident/list">Resident List</a></li>
+			<li class="active"><a href="http://localhost:8080/Lugait/resident/mainlist">Resident List</a></li>
 			</ul>
 		<g:if test="${flash.message}">
 			<div class="alert alert-info">
@@ -44,7 +44,7 @@
 			<b>Resident Number:</b>		${residentInstance?.residentNumber}<br>
 			<b>Resident Name:</b>		${residentInstance?.residentName}<br>
 			<b>Address:</b>					${residentInstance?.address}<br>
-			<b>Birthdate:</b>					${residentInstance?.birthMonth}-${residentInstance?.birthDate}-${residentInstance?.birthYear}<br>
+			<b>Birthdate:</b>					${residentInstance?.birthMonth}/${residentInstance?.birthDate}/${residentInstance?.birthYear}<br>
 			<b>Age:</b>					${residentInstance?.age}<br>
 	</td>
 	<td>
